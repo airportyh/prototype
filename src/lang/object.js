@@ -9,10 +9,9 @@
  *
 **/
 (function() {
-
+  
   function getClass(object) {
-    return Object.prototype.toString.call(object)
-     .match(/^\[object\s(.*)\]$/)[1];
+    return Object.prototype.toString.call(object).slice(8, -1);
   }
 
   /**
