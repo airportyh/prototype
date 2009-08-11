@@ -40,5 +40,9 @@ new Test.Unit.Runner({
     this.assert(Position.within($('body_absolute'), 10, 10), 'left/top corner');
     this.assert(Position.within($('body_absolute'), 10, 19), 'left/bottom corner');
     this.assert(!Position.within($('body_absolute'), 10, 20), 'outside bottom');
+  },
+  
+  testHiddenElementShouldNotGiveBodyAsOffsetParent: function(){
+    this.assertNotEqual($('hidden_element').getOffsetParent(), document.body);
   }
 });

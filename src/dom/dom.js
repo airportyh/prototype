@@ -1061,7 +1061,8 @@ Element.Methods = {
    *  `body` element is returned.
   **/
   getOffsetParent: function(element) {
-    if (element.offsetParent) return $(element.offsetParent);
+    var offsetParent = element.style.display == 'none' ? null : element.offsetParent;
+    if (offsetParent) return $(offsetParent);
     if (element == document.body) return $(element);
 
     while ((element = element.parentNode) && element != document.body)
